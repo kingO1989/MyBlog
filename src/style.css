@@ -1,0 +1,43 @@
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  flex: 30%;
+}
+
+.flex-post-container {
+  display: flex;
+  flex-flow: column wrap;
+}
+.post-title {
+  width: 200px;
+}
+.post-author {
+  width: 200px;
+  flex-basis: 30px;
+}
+
+.post-detail {
+  width: 500px;
+}
+
+.post-likes {
+  width: 100px;
+}
+
+.post-comments {
+  flex-basis: 30px;
+}
+
+@media (max-width: 650px) {
+  .flex-container {
+    flex-direction: column;
+    height: 300px;
+  }
+
+  .item {
+    flex: 50%;
+  }
+}

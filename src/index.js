@@ -2,12 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { BrowserRouter } from "react-router-dom";
+import { DbContextProvider } from "./utilities/DBContext";
+import { ApolloProvider } from '@apollo/client';
+import { client } from "./utilities/ApolloClient";
 import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <ApolloProvider client={client}>
+        <DbContextProvider>
+          <App />
+        </DbContextProvider>
+      </ApolloProvider>
+
+    </BrowserRouter>
+
   </React.StrictMode>
 );
 

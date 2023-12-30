@@ -1,38 +1,190 @@
-.App {
-  text-align: center;
+* {
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body {
+  margin: 0;
+  background-color: rgba(245, 245, 245, 0.89);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  background-color: white;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+header .logo_search {
+  display: flex;
+}
+header .logo_search .search input {
+  background-color: rgba(245, 245, 245, 0.89);
+  border: 1px solid rgba(245, 245, 245, 0.89);
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+  margin-left: 10px;
+  height: 20px;
+}
+
+header .my_works_social_media_notifications {
+  width: 13%;
+  display: flex;
+  justify-content: space-around;
+}
+header .my_works_social_media_notifications .fontawesome_item {
+  color: black;
+  font-size: x-large;
+}
+
+header .my_works_social_media_notifications .profile {
+  border: 1px solid black;
+  border-radius: 200px;
+  padding: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+main {
+  min-height: 400px;
+  display: flex;
+  padding: 10px;
+}
+main .authors_intro {
+  width: 68%;
+  background-color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+main .authors_intro nav {
+}
+main .authors_intro nav.post_nav {
+  background-color: white;
+  padding-top: 30px;
+
+  margin-bottom: 30px;
+  border-bottom: 1px solid silver;
+  display: flex;
+  justify-content: space-around;
+  z-index: 9;
+}
+
+main .authors_intro nav.post_nav .navitem {
+  padding-bottom: 10px;
+}
+
+main .authors_intro nav.post_nav .navitem:hover {
+  cursor: pointer;
+}
+
+main .authors_intro nav.post_nav .navitem.active {
+  border-bottom: 1px solid;
+}
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .allposts {
+  padding-top: 60px;
+}
+
+main .authors_intro .allposts {
+  border: 0px solid red;
+}
+main .authors_intro .allposts.dark {
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+main .authors_intro .allposts .flex-container {
+  display: flex;
+  flex-direction: column;
+}
+main .authors_intro .allposts .post_vignette {
+  display: flex;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.89);
+  padding-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main .authors_intro .allposts .post_vignette:hover {
+  cursor: pointer;
+}
+
+main .authors_intro .allposts .post_vignette .post_data {
+  width: 70%;
+}
+
+main .authors_intro .allposts .post_vignette .post_data .date {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+main .authors_intro .allposts .post_vignette .post_data .title {
+}
+
+main .authors_intro .allposts .post_vignette .post_data .details {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+main .authors_intro .allposts .post_vignette .post_data .vignette_footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+main
+  .authors_intro
+  .allposts
+  .post_vignette
+  .post_data
+  .vignette_footer
+  .tags_and_time_to_read {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main
+  .authors_intro
+  .allposts
+  .post_vignette
+  .post_data
+  .vignette_footer
+  .tags_and_time_to_read
+  .tag {
+  background-color: rgb(245, 243, 243);
+
+  border-radius: 9px;
+  padding: 5px;
+  margin-left: 5px;
+}
+main
+  .authors_intro
+  .allposts
+  .post_vignette
+  .post_data
+  .vignette_footer
+  .tags_and_time_to_read
+  .time {
+  margin-left: 5px;
+}
+main .authors_intro .allposts .post_vignette .post_image {
+  width: 27%;
+  background-color: black;
+  margin-left: 5px;
+}
+main .authors_recommendations {
+  width: 28%;
+  margin-left: 2px;
+  background-color: white;
 }
