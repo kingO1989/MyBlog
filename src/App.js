@@ -16,7 +16,7 @@ import './App.css';
 // Use a custom domain as the supabase URL
 
 
-///
+//////
 function App() {
 
   // console.log("app rendered");
