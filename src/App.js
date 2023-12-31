@@ -48,11 +48,9 @@ function App() {
         />
       }
       <Routes>
-
         <Route path="/" element={<Layout />}>
           <Route index element={posts ? <Home posts={posts} theme={isDark} /> : ""} />
           <Route path="post/:postid" element={<PostPage />} />
-
         </Route>
       </Routes>
 

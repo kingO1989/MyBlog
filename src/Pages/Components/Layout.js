@@ -49,15 +49,16 @@ const Layout = () => {
     return (
         <>
 
-            <header>
+            <header data_test="header">
                 <div className="logo_search">
                     <div className="logo">
 
-                        <Link to="/">Logo</Link>
+                        <Link data_test="logo" to="/">Logo</Link>
 
                     </div>
                     <div className="search">
                         <input type="text" name="" id="" placeholder="search" />
+
                     </div>
                 </div>
                 <div className="my_works_social_media_notifications">

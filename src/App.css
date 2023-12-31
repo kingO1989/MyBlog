@@ -24,9 +24,12 @@ header .logo_search .search input {
   background-color: rgba(245, 245, 245, 0.89);
   border: 1px solid rgba(245, 245, 245, 0.89);
   color: rgba(0, 0, 0, 0.7);
-  border-radius: 15px;
-  margin-left: 10px;
-  height: 20px;
+  padding: 6px;
+  margin-left: 20px;
+  margin-top: 8px;
+  margin-right: 16px;
+  border-radius: 25px;
+  font-size: 17px;
 }
 
 header .my_works_social_media_notifications {

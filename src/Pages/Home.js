@@ -9,22 +9,12 @@ import HomePostsList from '../Components/HomePostsList';
 function Home({ posts, theme }) {
     //  console.log(" Home Component loaded");
     console.log("Home rendered")
-    const [tab, setTab] = useState('all');
-
-    const tabRef = useRef();
-
-
+    const [tab, setTab] = useState('Latest');
+    const [displayPostState, setDisplayPostState] = useState(true);
+    const navRef = useRef();
 
 
-    //Due to hooks rule, and the use of useQuery this has to be at the top level of the component
-    // const wpposts = ApolloContext.GetAllPostsSummary();
 
-    /*     async function GetWPData() {
-            wpposts.then((data) => {
-                setWPData(data)
-                console.log(data)
-            })
-        } */
 
     useEffect(
         () => {
@@ -32,7 +22,7 @@ function Home({ posts, theme }) {
 
 
             // Get the navbar
-            var navbar = tabRef.current;
+            var navbar = navRef.current;
 
             // Get the offset position of the navbar
             var sticky = navbar.offsetTop;
@@ -57,19 +47,23 @@ function Home({ posts, theme }) {
         , []);
 
     return (
-        <>
-
-
-            <main>
-                <div className="authors_intro">
-                    <div ref={tabRef}><HomeTab tab={tab} setTab={setTab} /></div>
-                    {posts ? <HomePostsList posts={posts} tab={tab} theme={theme} /> : ""}
-                </div>
-
-                <div className="authors_recommendations"></div>
-            </main>
-
-        </>
+        <main data_test="main">
+            <div className="authors_intro" data_test="authors_content">
+                <div data_test="tabitemscontainer"
+                    ref={navRef}><HomeTab tab={tab}
+                        setTab={setTab}
+                        displayPostState={displayPostState}
+                        setDisplayPostState={setDisplayPostState}
+                    /></div>
+                {posts ? <HomePostsList posts={posts}
+                    tab={tab}
+                    theme={theme}
+                    displayPostState={displayPostState}
+                    setDisplayPostState={setDisplayPostState}
+                /> : ""}
+            </div>
+            <div className="authors_recommendations"></div>
+        </main>
     );
 }
 

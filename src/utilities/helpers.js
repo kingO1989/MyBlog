@@ -117,17 +117,17 @@ export async function GetTableOrViewRowsUsingPostId(SupabaseContext, table, post
 }
 
 
-export function filterTodos(posts, tab) {
+export function filterPosts(posts, tab) {
     let startTime = performance.now();
     while (performance.now() - startTime < 500) {
         // Do nothing for 500 ms to emulate extremely slow code
     }
     return posts.filter(post => {
 
-        if (tab === 'all') {
+        if (tab === 'Latest') {
             return true;
         } else if (tab === 'React' && post.postid === 1) {
-            console.log(post.postid)
+
             return true;
         } else if (tab === '.Net' && post.postid === 2) {
             return true;

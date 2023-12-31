@@ -1,9 +1,9 @@
 import { useQuery, ApolloClient, InMemoryCache, gql } from "@apollo/client";
 
-const client = new ApolloClient({
+/* const client = new ApolloClient({
     uri: "http://ec2-54-174-14-190.compute-1.amazonaws.com/graphql",
     cache: new InMemoryCache()
-});
+}); */
 
 const QueryTransformer = () => {
 
@@ -59,78 +59,78 @@ async function GetPostUsingPostId(table, postid) {
 
 
 
-    //Get Posts Using post id
+  //Get Posts Using post id
 
-    /*  const { data, error } = await SupabaseClient
-         .from(table)
-         .select("*")
-         .eq("postid", postid);
+  /*  const { data, error } = await SupabaseClient
+       .from(table)
+       .select("*")
+       .eq("postid", postid);
  
-     if (error) {
-         console.log(error)
-         return error;
-     }
+   if (error) {
+       console.log(error)
+       return error;
+   }
  
-     else if (data) {
+   else if (data) {
  
  
-         if (Array.isArray(data))
-             return data
-         else return data[0];
-     */     //return requiredPost
+       if (Array.isArray(data))
+           return data
+       else return data[0];
+   */     //return requiredPost
 }
 
 
 
 async function GetAllPostsSummary() {
 
-    const { loading, error, data } = useQuery(ALL_POSTS);
+  const { loading, error, data } = useQuery(ALL_POSTS);
 
-    const myPromise = new Promise((resolve, reject) => {
+  const myPromise = new Promise((resolve, reject) => {
 
-        if (error) {
-            console.log(error)
-            reject(error);
-        }
-        if (data) {
-
-
-
-            const posts = data.posts.nodes.map((singlepost) => {
-
-                //create object to hold transformed post
-
-                let title = singlepost.title;
-                let postid = singlepost.id;
-                let name = singlepost.author.node.firstName + " " + singlepost.author.node.lastName;
-                let abstract = singlepost.excerpt;
-                let commentcount = singlepost.commentcount;
-                let likes = 0;
-
-                var obj = {
-
-                    title,
-                    postid,
-                    name,
-                    abstract,
-                    commentcount,
-                    likes
-                };
-
-
-                return obj;
-
-            })
-            resolve(posts);
-
-
-        }
-
-    });
+    if (error) {
+      console.log(error)
+      reject(error);
+    }
+    if (data) {
 
 
 
-    return myPromise;
+      const posts = data.posts.nodes.map((singlepost) => {
+
+        //create object to hold transformed post
+
+        let title = singlepost.title;
+        let postid = singlepost.id;
+        let name = singlepost.author.node.firstName + " " + singlepost.author.node.lastName;
+        let abstract = singlepost.excerpt;
+        let commentcount = singlepost.commentcount;
+        let likes = 0;
+
+        var obj = {
+
+          title,
+          postid,
+          name,
+          abstract,
+          commentcount,
+          likes
+        };
+
+
+        return obj;
+
+      })
+      resolve(posts);
+
+
+    }
+
+  });
+
+
+
+  return myPromise;
 
 
 }
@@ -138,20 +138,20 @@ async function GetAllPostsSummary() {
 
 async function SaveComment(comment, postid, userid) {
 
-    //Save comment to wordpress as well via this blog site
-    /*  const { data, error } = await SupabaseClient.rpc("add_comments", {
-         commentdetail: comment,
-         postid: postid,
-         userid: userid,
-     });
-     if (error) {
-         console.error(error);
-     }
-     else {
+  //Save comment to wordpress as well via this blog site
+  /*  const { data, error } = await SupabaseClient.rpc("add_comments", {
+       commentdetail: comment,
+       postid: postid,
+       userid: userid,
+   });
+   if (error) {
+       console.error(error);
+   }
+   else {
  
-         return data;
+       return data;
  
-     } */
+   } */
 }
 
 
@@ -201,7 +201,7 @@ async function AddLikes(postid) {
 //GetLoggedUserData FindSingleUserFromDB GetSingleUserFromDB IsUserInDatabaseIfNotCreateNewUser  GetTableOrViewRowsUsingPostId
 
 const ApolloContext = {
-    GetAllPostsSummary: GetAllPostsSummary
+  GetAllPostsSummary: GetAllPostsSummary
 
 }
 
@@ -212,7 +212,7 @@ const DbContextProvider = (props) => {
 }
 
 
-export { client, ApolloContext };
+//export { client, ApolloContext };
 
 
 
