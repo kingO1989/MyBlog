@@ -13,7 +13,7 @@ module.exports = {
     ],
 
     moduleNameMapper: {
-        '\\.(css|less)$': '<rootDir>/styleMock.js',
+        '\\.(css|less)$': './styleMock.js',
     }
 
     // setupFiles: ["./testenv.js"]
