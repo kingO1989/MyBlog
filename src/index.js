@@ -8,28 +8,8 @@ import { ApolloProvider } from '@apollo/client';
 import { client } from "./utilities/ApolloClient";
 import reportWebVitals from './reportWebVitals';
 
-export const Main = () => {
-
-  return (<>
-    <BrowserRouter>
-      <DbContextProvider>
-        <App />
-      </DbContextProvider>
-    </BrowserRouter>
-
-  </>);
-}
 
 
-
-
-
-
-
-
-
-
-/*
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -41,6 +21,10 @@ root.render(
   </React.StrictMode>
 );
 
+
+
+
+/*
  <React.StrictMode>
    <BrowserRouter>
      <ApolloProvider client={client}>

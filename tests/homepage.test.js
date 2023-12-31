@@ -1,5 +1,5 @@
 import TestRenderer from 'react-test-renderer'; // ES6
-import { Main } from '../src/index';
+import { Main } from '../src/indexTest';
 
 import Home from '../src/Pages/Home';
 /*
