@@ -11,9 +11,9 @@ module.exports = {
     transformIgnorePatterns: [
         '//node_modules'
     ],
-
+    moduleDirectories: ['node_modules', '.'],
     moduleNameMapper: {
-        '\\.(css|less)$': './styleMock.js',
+        '\\.(css|less)$': '<rootDir>/styleMock.js',
     }
 
     // setupFiles: ["./testenv.js"]
