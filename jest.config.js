@@ -11,7 +11,7 @@ module.exports = {
     transformIgnorePatterns: [
         '//node_modules'
     ],
-    moduleDirectories: ['node_modules', '.'],
+    moduleDirectories: ['node_modules', 'src'],
     moduleNameMapper: {
         '\\.(css|less)$': '<rootDir>/styleMock.js',
     }
